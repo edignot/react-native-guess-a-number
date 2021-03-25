@@ -1,28 +1,36 @@
 import React from "react"
 import { View, Text, StyleSheet, TextInput, Button } from "react-native"
+import Card from "../components/Card"
+import colors from "../constants/colors"
 
 const StartGameScreen = () => {
   return (
     <View style={styles.screen}>
       <Text style={styles.title}>Start a New Game!!!</Text>
-      <View styles>
+      <Card>
         <Text></Text>
         <TextInput style={styles.inputContainer} />
         <View style={styles.buttonContainer}>
-          <Button
-            title="Reset"
-            onPress={() => {
-              alert("Reset")
-            }}
-          />
-          <Button
-            title="Confirm"
-            onPress={() => {
-              alert("Confirm")
-            }}
-          />
+          <View style={styles.button}>
+            <Button
+              color={colors.red}
+              title="Reset"
+              onPress={() => {
+                alert("Reset")
+              }}
+            />
+          </View>
+          <View style={styles.button}>
+            <Button
+              color={colors.green}
+              title="Confirm"
+              onPress={() => {
+                alert("Confirm")
+              }}
+            />
+          </View>
         </View>
-      </View>
+      </Card>
     </View>
   )
 }
@@ -49,6 +57,13 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  button: {
+    backgroundColor: "#f4f4f4",
+    width: "40%",
+    borderRadius: 50,
+    marginTop: 20,
   },
 })
 
